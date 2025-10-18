@@ -1,51 +1,75 @@
 "use client";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="text-2xl font-bold flex items-center gap-2">
-          <span className="text-primary">⬤</span> GABOIL
+    <nav className="bg-black/100 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          
+          {/* LOGO */}
+          <div className="flex items-center space-x-2">
+            <Image src="/icons/logo.svg" alt="Gab Oil" width={40} height={40} />
+            <span className="font-bold text-xl text-gray-100">GABOIL</span>
+          </div>
+
+          {/* LINKS DESKTOP */}
+          <div className="hidden md:flex space-x-8">
+            <Link href="/" className="text-gray-700 hover:text-gray-200 font-medium">
+              Accueil
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-200 font-medium">
+              À propos
+            </Link>
+            <Link href="/activites" className="text-gray-600 hover:text-gray-200 font-medium">
+              Activites
+            </Link>
+            <Link href="/contact" className="text-gray-600 hover:text-gray-200 font-medium">
+              Contact
+            </Link>
+          </div>
+
+          {/* MENU BURGER MOBILE */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} >
+              <Image
+                src={isOpen ? "/icons/close.svg" : "/icons/menu.svg"}
+                alt="Menu"
+                width={28}
+                height={28}
+                
+
+                
+              />
+            </button>
+          </div>
         </div>
-
-        {/* Menu Desktop */}
-        <ul className="hidden md:flex gap-6 text-sm uppercase">
-          <li><a href="#" className="hover:text-primary">À propos</a></li>
-          <li><a href="#" className="hover:text-primary">Activités</a></li>
-          <li><a href="#" className="hover:text-primary">Offres & Promos</a></li>
-          <li><a href="#" className="hover:text-primary">Blog</a></li>
-          <li><a href="#" className="hover:text-primary">Contact</a></li>
-        </ul>
-
-        {/* Langue bouton */}
-        <button className="hidden md:block bg-primary text-white px-4 py-1 rounded-full text-sm">
-          Afr
-        </button>
-
-        {/* Burger menu mobile */}
-        <button onClick={toggleMenu} className="md:hidden focus:outline-none">
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
-      {/* Menu Mobile */}
+      {/* MENU MOBILE */}
       {isOpen && (
-        <div className="md:hidden bg-black text-white flex flex-col items-center space-y-4 py-6 border-t border-gray-700">
-          <a href="#" className="hover:text-primary" onClick={toggleMenu}>À propos</a>
-          <a href="#" className="hover:text-primary" onClick={toggleMenu}>Activités</a>
-          <a href="#" className="hover:text-primary" onClick={toggleMenu}>Offres & Promos</a>
-          <a href="#" className="hover:text-primary" onClick={toggleMenu}>Blog</a>
-          <a href="#" className="hover:text-primary" onClick={toggleMenu}>Contact</a>
-          <button className="bg-primary text-white px-6 py-2 rounded-full text-sm">
-            Afr
-          </button>
+        <div className="md:hidden bg-white shadow-lg">
+          <div className="bg-gray-300 flex flex-col items-center py-4 space-y-3">
+            <Link href="/" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
+              Accueil
+            </Link>
+            <Link href="/about" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
+              À propos
+            </Link>
+            <Link href="/activites" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
+              Activites
+            </Link>
+            <Link href="/contact" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
+              Contact
+            </Link>
+          </div>
         </div>
       )}
     </nav>
