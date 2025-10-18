@@ -6,7 +6,7 @@ export default function AboutPage() {
       {/* === HERO SECTION === */}
       <section
         className="relative bg-cover bg-center h-[80vh] flex items-center justify-center"
-        style={{ backgroundImage: "url('/station.jpg')" }}
+        style={{ backgroundImage: "url('/station.png')" }}
       >
         {/* Overlay sombre */}
         <div className="absolute inset-0 bg-black/60"></div>
@@ -20,7 +20,7 @@ export default function AboutPage() {
             Fournir au Gabon des produits pétroliers et gaziers de haute qualité.
           </p>
           <button className="mt-8 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full transition">
-            DÉCOUVRIR NOS VALEURS →
+            DÉCOUVRIR NOS VALEURS |
           </button>
         </div>
       </section>
@@ -32,7 +32,7 @@ export default function AboutPage() {
             Qui sommes-nous ?
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Gab’Oil est une société gabonaise spécialisée dans la distribution
+            GABOIL est une société gabonaise spécialisée dans la distribution
             et la commercialisation des produits pétroliers et gaziers.
             Présente depuis plusieurs années, elle s’est imposée comme un acteur
             majeur du secteur énergétique grâce à son engagement pour la qualité,
@@ -57,7 +57,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Image src="/icons/trust.svg" alt="Confiance" width={32} height={32} />
+              <Image src="/icons/confiance.svg" alt="Confiance" width={32} height={32} />
               <div>
                 <h3 className="font-semibold text-lg">Confiance</h3>
                 <p className="text-gray-700">
