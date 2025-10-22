@@ -22,16 +22,16 @@ export default function Navbar() {
 
           {/* LINKS DESKTOP */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-gray-200 font-medium">
+            <Link href="/" className="text-gray-500 hover:text-gray-200 font-medium">
               Accueil
             </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-200 font-medium">
+            <Link href="/about" className="text-gray-500 hover:text-gray-200 font-medium">
               À propos
             </Link>
-            <Link href="/activites" className="text-gray-600 hover:text-gray-200 font-medium">
-              Activites
+            <Link href="/stations" className="text-gray-500 hover:text-gray-200 font-medium">
+              Nos Stations
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-200 font-medium">
+            <Link href="/contact" className="text-gray-500 hover:text-gray-200 font-medium">
               Contact
             </Link>
           </div>
@@ -63,8 +63,8 @@ export default function Navbar() {
             <Link href="/about" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
               À propos
             </Link>
-            <Link href="/activites" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
-              Activites
+            <Link href="/stations" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
+              Nos Stations
             </Link>
             <Link href="/contact" onClick={closeMenu} className="text-gray-700 hover:text-gray-70 font-medium">
               Contact
